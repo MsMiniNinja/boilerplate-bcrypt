@@ -9,9 +9,9 @@ const saltRounds = 12;
 const myPlaintextPassword = 'sUperpassw0rd!';
 const someOtherPlaintextPassword = 'pass123';
 
-bcrypt.hash(myPlaintextPassword, saltRounds, (err, hash) => {
+bcrypt.hash(myPlaintextPassword, saltRounds, (res, hash) => {
     console.log(hash);
-    bcrypt.compare(myPlaintextPassword, hash, (err, hash) => {
+    bcrypt.compare(myPlaintextPassword, hash, (hash, res) => {
       console.log(hash);
     });
   });
